@@ -7,78 +7,79 @@
 </head>
 <body>
 
-<h2>Таблица</h2>
+  <h2>Таблица</h2>
+  
+  <table>
+    <tr class="bold-row">
+      <td>Обычная ячейка</td>
+      <td colspan="2">Данная ячейка занимает две колонки</td>
+      <td rowspan="2">Данная ячейка<br>занимает два ряда</td>
+      <td class="raised">Выпуклая ячейка</td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <table class="nested">
+          <p class="headtable">
+              <i>
+                  Таблица 2.1
+              </i>
+          </p>
+          <tr><th colspan="3">Заголовок таблицы 2.1</th></tr>
+          <tr>
+            <td>Тело таблицы ячейка 1</td>
+            <td>Тело таблицы ячейка 2</td>
+            <td>Тело таблицы ячейка 3</td>
+          </tr>
+          <tr>
+            <td colspan="2">Нижняя часть таблицы ячейка 1</td>
+            <td>Нижняя часть таблицы ячейка 2</td>
+          </tr>
+        </table>
+      </td>
+      <td>
+          <div class="table-container">
+              <p class="headtable"><i>Таблица 2.2</i></p>
+              <table class="nested no-border">
+              <tr>
+                  <td>Таблица 2.2 ячейка 1</td>
+                  <td>Таблица 2.2 ячейка 2</td>
+              </tr>
+              <tr>
+                  <td>Таблица 2.2 ячейка 3</td>
+                  <td>Таблица 2.2 ячейка 4</td>
+              </tr>
+              </table>
+          </div>
+      </td>
 
-<table>
-  <tr class="bold-row">
-    <td>Обычная ячейка</td>
-    <td colspan="2">Данная ячейка занимает две колонки</td>
-    <td rowspan="2">Данная ячейка<br>занимает два ряда</td>
-    <td class="raised">Выпуклая ячейка</td>
-  </tr>
-  <tr>
-    <td colspan="3">
-      <table class="nested">
-        <p class="headtable">
-            <i>
-                Таблица 2.1
-            </i>
-        </p>
-        <tr><th colspan="3">Заголовок таблицы 2.1</th></tr>
-        <tr>
-          <td>Тело таблицы ячейка 1</td>
-          <td>Тело таблицы ячейка 2</td>
-          <td>Тело таблицы ячейка 3</td>
-        </tr>
-        <tr>
-          <td colspan="2">Нижняя часть таблицы ячейка 1</td>
-          <td>Нижняя часть таблицы ячейка 2</td>
-        </tr>
-      </table>
-    </td>
-    <td>
-        <div class="table-container">
-            <p class="headtable"><i>Таблица 2.2</i></p>
-            <table class="nested no-border">
-            <tr>
-                <td>Таблица 2.2 ячейка 1</td>
-                <td>Таблица 2.2 ячейка 2</td>
-            </tr>
-            <tr>
-                <td>Таблица 2.2 ячейка 3</td>
-                <td>Таблица 2.2 ячейка 4</td>
-            </tr>
-            </table>
-        </div>
-    </td>
-
-  </tr>
-  <tr class="columns">
-    <td>Колонка 1</td>
-    <td>Колонка 2</td>
-    <td>Колонка 3</td>
-    <td>Колонка 4</td>
-    <td>Колонка 5</td>
-  </tr>
-</table>
+    </tr>
+    <tr class="columns">
+      <td>Колонка 1</td>
+      <td>Колонка 2</td>
+      <td>Колонка 3</td>
+      <td>Колонка 4</td>
+      <td>Колонка 5</td>
+    </tr>
+  </table>
 
 
-<hr class="styled-line" />
+  <hr class="styled-line" />
+  <br/><br/><br/><br/><br/><br/>
 
-<h3>Аудио и видео</h3>
-<audio controls>
-  <source src="audio.mp3" type="audio/mpeg">
-</audio>
-<br>
-<video width="320" height="240" controls>
-  <source src="video.mp4" type="video/mp4">
-</video>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<h3>Движущийся текст и изображение</h3>
-<marquee behavior="alternate" direction="left" scrollamount="5" class="marquee">
-  <img src="/Lab3/resources/images/css.webp" width="100" height="80" alt="Движущееся изображение">
-  <span>Это движущийся текст!</span>
-</marquee>
+  <h3>Аудио и видео</h3>
+  <audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+  </audio>
+  <br>
+  <video width="320" height="240" controls>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+  <h3>Движущийся текст и изображение</h3>
+  <marquee behavior="alternate" direction="left" scrollamount="5" class="marquee">
+    <img src="/Lab3/resources/images/css.webp" width="100" height="80" alt="Движущееся изображение">
+    <span>Это движущийся текст!</span>
+  </marquee>
 
 </body>
 </html>
