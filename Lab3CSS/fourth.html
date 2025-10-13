@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализ свойств CSS для размеров элементов</title>
+    <link rel="stylesheet" href="fourth.css"/>
+</head>
+<body>
+    <h1>Анализ свойств CSS для управления размерами элементов</h1>
+    
+    <div class="example">
+        <h2>Задание №5: Свойства width и height</h2>
+        <div class="container">
+            <div>
+                <p>Изображение 200x150px:</p>
+                <img src="images/css.png" alt="Пример изображения" width="200" height="150">
+            </div>
+            <div>
+                <p>Изображение 300x100px:</p>
+                <img src="images/css.png" alt="Пример изображения" width="300" height="100">
+            </div>
+            <div>
+                <p>Изображение 150x200px:</p>
+                <img src="images/css.png" alt="Пример изображения" width="150" height="200">
+            </div>
+        </div>
+    </div>
+    
+    <div class="example">
+        <h2>Задание №6: Свойства max-width и min-width</h2>
+        
+        <h3>max-width: 300px</h3>
+        <div class="box" style="max-width: 300px;">Элемент с max-width: 300px. Ширина ограничена сверху.</div>
+        
+        <h3>min-width: 300px</h3>
+        <div class="box" style="min-width: 300px;">Элемент с min-width: 300px. Ширина ограничена снизу.</div>
+        
+        <h3>Сравнение поведения:</h3>
+        <div class="code">
+            /* max-width ограничивает максимальную ширину элемента */
+            .element { max-width: 300px; }
+            
+            /* min-width устанавливает минимальную ширину элемента */
+            .element { min-width: 300px; }
+        </div>
+        
+        <p><strong>Наблюдение:</strong> max-width позволяет элементу быть уже установленного значения, но не шире. min-width, наоборот, позволяет элементу быть шире, но не уже установленного значения.</p>
+    </div>
+    
+    <div class="example">
+        <h2>Задание №7: Свойства max-height и min-height</h2>
+        
+        <h3>Без ограничений по высоте:</h3>
+        <div class="box" style="height: 100px;">
+            <div class="red-box">Внутренний блок без ограничений по высоте</div>
+        </div>
+        
+        <h3>max-height: 70px (при height: 100px):</h3>
+        <div class="box" style="height: 100px;">
+            <div class="red-box" style="height: 100px; max-height: 70px;">Внутренний блок с max-height: 70px</div>
+        </div>
+        
+        <h3>max-height: 40px (при height: 100px):</h3>
+        <div class="box" style="height: 100px;">
+            <div class="red-box" style="height: 100px; max-height: 40px;">Внутренний блок с max-height: 40px</div>
+        </div>
+        
+        <h3>min-height: 80px:</h3>
+        <div class="box" style="height: 100px;">
+            <div class="red-box" style="min-height: 80px;">Внутренний блок с min-height: 80px</div>
+        </div>
+        
+        <div class="code">
+            /* max-height ограничивает максимальную высоту элемента */
+            .element { max-height: 70px; }
+            
+            /* min-height устанавливает минимальную высоту элемента */
+            .element { min-height: 80px; }
+        </div>
+        
+        <p><strong>Наблюдение:</strong> max-height ограничивает высоту элемента сверху, даже если задано большее значение height. min-height гарантирует, что элемент будет не ниже установленного значения, даже если контента мало.</p>
+    </div>
+    
+    <div class="example">
+        <h2>Практическое применение всех свойств вместе</h2>
+        
+        <div class="box" style="width: 80%; min-width: 200px; max-width: 600px; height: 150px; min-height: 100px; max-height: 200px;">
+            Этот элемент имеет:
+            <ul>
+                <li>width: 80% (относительная ширина)</li>
+                <li>min-width: 200px (не может быть уже)</li>
+                <li>max-width: 600px (не может быть шире)</li>
+                <li>height: 150px (фиксированная высота)</li>
+                <li>min-height: 100px (не может быть ниже)</li>
+                <li>max-height: 200px (не может быть выше)</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

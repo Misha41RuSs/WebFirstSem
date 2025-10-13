@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №5 - Позиционирование в CSS</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <h1>Лабораторная работа №5: Позиционирование и создание якорей в CSS</h1>
+    
+    <!-- Задание №1 -->
+    <div class="section">
+        <div class="task-title">Задание №1: Относительное позиционирование, свойства шрифта, z-index</div>
+        <div class="relative-container">
+            <div class="text-layer-1">Слой с z-index: 1</div>
+            <div class="text-layer-2">Слой с z-index: 2</div>
+            <div class="text-layer-3">Слой с z-index: 3</div>
+        </div>
+        <p><strong>Наблюдение:</strong> Относительное позиционирование смещает элементы относительно их нормального положения. Свойство z-index контролирует порядок наложения элементов.</p>
+    </div>
+    
+    <!-- Задание №2 -->
+    <div class="section">
+        <div class="task-title">Задание №2: Относительное позиционирование и свойства заголовка</div>
+        <div class="headers-container">
+            <h1 class="main-header">Главный заголовок</h1>
+            <h2 class="sub-header">Подзаголовок страницы</h2>
+            <p class="side-note">Дополнительная информация с поворотом</p>
+        </div>
+        <p><strong>Наблюдение:</strong> Относительное позиционирование позволяет создавать интересные композиции заголовков со смещениями и трансформациями.</p>
+    </div>
+    
+    <!-- Задание №3 -->
+    <div class="section">
+        <div class="task-title">Задание №3: Абсолютное позиционирование, свойства фона, z-index, рамки</div>
+        <div class="absolute-container">
+            <div class="box-1">
+                <div class="box-text">Слой 1<br>z-index: 10</div>
+            </div>
+            <div class="box-2">
+                <div class="box-text">Слой 2<br>z-index: 20</div>
+            </div>
+            <div class="box-3">
+                <div class="box-text">Слой 3<br>z-index: 30</div>
+            </div>
+        </div>
+        <p><strong>Наблюдение:</strong> Абсолютное позиционирование размещает элементы относительно ближайшего позиционированного предка. Элементы с большим z-index отображаются поверх элементов с меньшим z-index.</p>
+    </div>
+    
+    <!-- Задание №4 -->
+    <div class="section">
+        <div class="task-title">Задание №4: Абсолютное позиционирование и свойства якоря</div>
+        <div class="anchors-container">
+            <div class="content-menu">
+                <h3>Навигация</h3>
+                <ul>
+                    <li><a href="#section1">Раздел 1</a></li>
+                    <li><a href="#section2">Раздел 2</a></li>
+                    <li><a href="#section3">Раздел 3</a></li>
+                </ul>
+            </div>
+            
+            <div id="section1" class="content-section section-1">
+                <h3 class="section-title">Раздел 1</h3>
+                <p>Содержание первого раздела с абсолютным позиционированием.</p>
+            </div>
+            
+            <div id="section2" class="content-section section-2">
+                <h3 class="section-title">Раздел 2</h3>
+                <p>Содержание второго раздела с абсолютным позиционированием.</p>
+            </div>
+            
+            <div id="section3" class="content-section section-3">
+                <h3 class="section-title">Раздел 3</h3>
+                <p>Содержание третьего раздела с абсолютным позиционированием.</p>
+            </div>
+        </div>
+        <p><strong>Наблюдение:</strong> Абсолютное позиционирование в сочетании с якорями позволяет создавать сложные макеты с точным размещением элементов.</p>
+    </div>
+    
+    <div class="section">
+        <div class="task-title">Демонстрация всех типов позиционирования</div>
+        <div class="positioning-demo">
+            <h3>Типы позиционирования в CSS:</h3>
+            
+            <div class="demo-container">
+                <div class="static-box">Static (статическое) - позиционирование по умолчанию</div>
+                <div class="relative-box">Relative (относительное) - смещено относительно нормального положения</div>
+                <div class="absolute-box">Absolute (абсолютное) - позиционируется относительно ближайшего позиционированного предка</div>
+                <div class="sticky-box">Sticky (липкое) - переключается между relative и fixed в зависимости от прокрутки</div>
+            </div>
+            
+            <div class="fixed-box">Fixed (фиксированное) - позиционируется относительно окна браузера</div>
+            
+            <p><strong>Ключевые различия:</strong></p>
+            <ul>
+                <li><strong>Static:</strong> Элемент располагается в нормальном потоке документа</li>
+                <li><strong>Relative:</strong> Смещается относительно своего нормального положения</li>
+                <li><strong>Absolute:</strong> Удаляется из нормального потока, позиционируется относительно предка</li>
+                <li><strong>Fixed:</strong> Фиксируется относительно окна просмотра</li>
+                <li><strong>Sticky:</strong> Ведет себя как relative до определенной точки прокрутки, затем как fixed</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Добавляем плавную прокрутку для якорей
+        document.querySelectorAll('.content-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

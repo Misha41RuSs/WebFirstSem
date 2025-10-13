@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.section {
+    background: white;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.task-title {
+    background: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-size: 1.3em;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Задание №1 - Свойства display, шрифта, текста, рамки и поля */
+.display-demo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.display-item {
+    padding: 20px;
+    border: 3px solid #2c3e50;
+    margin: 10px;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.block-item {
+    display: block;
+    background: #e74c3c;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 25px;
+    margin: 15px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.inline-item {
+    display: inline;
+    background: #2ecc71;
+    color: white;
+    font-style: italic;
+    text-decoration: underline;
+    padding: 10px 15px;
+    margin: 0 5px;
+}
+
+.inline-block-item {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    width: 150px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    margin: 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+.none-item {
+    display: none;
+    background: #95a5a6;
+    padding: 20px;
+}
+
+/* Задание №2 - Химические формулы с display */
+.chemical-formulas {
+    background: #ecf0f1;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.formula {
+    display: inline-block;
+    margin: 15px 25px;
+    padding: 20px;
+    background: white;
+    border: 2px solid #34495e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.formula h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.formula-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+sub, sup {
+    font-size: 0.7em;
+}
+
+/* Задание №3 - Свойство float */
+.float-container {
+    background: #34495e;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.float-box {
+    width: 120px;
+    height: 80px;
+    margin: 10px;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 8px;
+}
+
+.float-left {
+    float: left;
+    background: #e74c3c;
+}
+
+.float-right {
+    float: right;
+    background: #3498db;
+}
+
+.float-content {
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.clear-float {
+    clear: both;
+}
+
+/* Задание №4 - Свойство clear */
+.clear-demo {
+    background: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.clear-box {
+    width: 100px;
+    height: 60px;
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.clear-left { clear: left; background: #e67e22; }
+.clear-right { clear: right; background: #9b59b6; }
+.clear-both { clear: both; background: #1abc9c; }
+.clear-none { clear: none; background: #34495e; }
+
+/* Задание №5 - Свойство clip */
+.clip-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.clip-image {
+    position: absolute;
+    clip: rect(50px, 250px, 200px, 50px);
+}
+
+.image-comparison {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.image-box {
+    text-align: center;
+}
+
+.image-box img {
+    border: 3px solid #2c3e50;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Задание №6 - Свойство zoom */
+.zoom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px;
+    background: #ecf0f1;
+    border-radius: 10px;
+}
+
+.zoom-box {
+    width: 100px;
+    height: 80px;
+    background: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #2980b9;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.zoom-50 { transform: scale(0.5); }
+.zoom-100 { transform: scale(1); }
+.zoom-150 { transform: scale(1.5); }
+.zoom-200 { transform: scale(2); }
+
+/* Задание №7 - Свойство cursor */
+.cursor-demo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    background: #34495e;
+    border-radius: 10px;
+}
+
+.cursor-item {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cursor-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.default { cursor: default; }
+.pointer { cursor: pointer; }
+.wait { cursor: wait; }
+.text { cursor: text; }
+.move { cursor: move; }
+.crosshair { cursor: crosshair; }
+.help { cursor: help; }
+.not-allowed { cursor: not-allowed; }
+
+/* Задание №8 - Свойство overflow */
+.overflow-demo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.overflow-box {
+    height: 150px;
+    border: 3px solid #2c3e50;
+    border-radius: 8px;
+    padding: 15px;
+    background: white;
+}
+
+.overflow-content {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+}
+
+.auto { overflow: auto; }
+.scroll { overflow: scroll; }
+.hidden { overflow: hidden; }
+.visible { overflow: visible; }
+
+/* Задание №9 - Полосы прокрутки */
+.scrollbar-demo {
+    height: 200px;
+    overflow: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #3498db;
+}
+
+.scrollbar-content {
+    height: 500px;
+    background: linear-gradient(180deg, #667eea, #764ba2, #f093fb, #f5576c);
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Стилизация полосы прокрутки */
+.scrollbar-demo::-webkit-scrollbar {
+    width: 15px;
+}
+
+.scrollbar-demo::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.scrollbar-demo::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    border-radius: 10px;
+}
+
+.scrollbar-demo::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #2980b9, #27ae60);
+}
+
+/* Задание №10 - Свойство visibility */
+.visibility-demo {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    background: #2c3e50;
+    border-radius: 10px;
+}
+
+.visibility-box {
+    width: 100px;
+    height: 80px;
+    background: #e74c3c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.visible-item { visibility: visible; }
+.hidden-item { visibility: hidden; }
+.collapse-item { visibility: collapse; }
+
+/* Задание №11 - Свойство opacity и filter */
+.opacity-demo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+}
+
+.opacity-item {
+    height: 120px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.opacity-1 { opacity: 1; background: #3498db; }
+.opacity-08 { opacity: 0.8; background: #2ecc71; }
+.opacity-06 { opacity: 0.6; background: #e74c3c; }
+.opacity-04 { opacity: 0.4; background: #f39c12; }
+.opacity-02 { opacity: 0.2; background: #9b59b6; }
+
+.rgba-item {
+    background: rgba(52, 152, 219, 0.5);
+    border: 3px solid #2980b9;
+}
+
+.code-example {
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    font-family: monospace;
+}
+
+.explanation {
+    background: #ecf0f1;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #3498db;
+}
