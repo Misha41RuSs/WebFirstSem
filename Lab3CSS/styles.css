@@ -1,0 +1,23 @@
+div {
+    font-size: 30px;
+}
+
+h1 {
+    font-size: 40px;
+    color: red;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.rgb {
+    background-color: rgb(15, 158, 205);
+}
+
+.hex {
+    background-color: #A0A0A0;
+}

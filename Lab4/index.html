@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Форма заявки и интернет-магазина</title>
+</head>
+<body>
+    <h2>Заявка на обучение</h2>
+    <form>
+        <label>Имя:<br>
+            <input type="text" name="name" />
+        </label><br><br>
+
+        <label>E-Mail:<br>
+            <input type="email" name="email" />
+        </label><br><br>
+
+        <p>Вы уже проходили обучение в нашем центре:</p>
+        <label><input type="radio" name="trained" value="yes"> Да</label><br>
+        <label><input type="radio" name="trained" value="no"> Нет</label><br><br>
+
+        <label>Курс:<br>
+            <select name="course" size="4" multiple>
+                <option>Word</option>
+                <option>Excel</option>
+                <option>JavaScript</option>
+                <option>HTML</option>
+            </select>
+        </label><br/><br/>
+
+        <label>Дополнительная информация:<br>
+            <textarea rows="5" cols="30" name="info"></textarea>
+        </label><br/><br/>
+
+        <input type="submit" value="Отправить">
+        <input type="reset" value="Обновить">
+    </form>
+
+    <hr>
+
+    <h2>Форма заказа в интернет-магазине</h2>
+    <form>
+        <fieldset>
+            <legend>Персональная информация</legend>
+            <table>
+                <tr>
+                    <td><label for="firstName">Имя:</label></td>
+                    <td><input type="text" id="firstName" name="firstName" /></td>
+                </tr>
+                <tr>
+                    <td><label for="lastName">Фамилия:</label></td>
+                    <td><input type="text" id="lastName" name="lastName" /></td>
+                </tr>
+                <tr>
+                    <td><label for="address">Адрес:</label></td>
+                    <td><input type="text" id="address" name="address" /></td>
+                </tr>
+                <tr>
+                    <td><label for="city">Город:</label></td>
+                    <td><input type="text" id="city" name="city" /></td>
+                </tr>
+                <tr>
+                    <td><label for="country">Государство:</label></td>
+                    <td><input type="text" id="country" name="country" /></td>
+                </tr>
+                <tr>
+                    <td><label for="pincode">Пин-код:</label></td>
+                    <td><input type="text" id="pincode" name="pincode" /></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Телефон:</label></td>
+                    <td><input type="tel" id="phone" name="phone" /></td>
+                </tr>
+            </table>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Выберите товары</legend>
+            <label><input type="checkbox" name="product" value="item1" /> Ноутбук</label><br>
+            <label><input type="checkbox" name="product" value="item2" /> Смартфон</label><br>
+            <label><input type="checkbox" name="product" value="item3" /> Наушники</label><br>
+            <label><input type="checkbox" name="product" value="item4" /> Клавиатура</label><br>
+            <label><input type="checkbox" name="product" value="item5" /> Мышь</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Кредит</legend>
+            <label><input type="radio" name="credit" value="1" /> 1 год</label><br>
+            <label><input type="radio" name="credit" value="3" /> 3 года</label><br>
+            <label><input type="radio" name="credit" value="5" /> 5 лет</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Способ оплаты</legend>
+            <label><input type="radio" name="payment" value="prepay" /> Предоплата</label><br>
+            <label><input type="radio" name="payment" value="card" /> Кредитная карточка</label><br>
+        </fieldset>
+
+        <br>
+        <input type="submit" value="Сделать заказ" />
+        <input type="reset" value="Отменить заказ" />
+    </form>
+
+</body>
+</html>

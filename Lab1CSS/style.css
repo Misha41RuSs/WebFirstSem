@@ -1,0 +1,40 @@
+h2 {
+    text-align: center;
+    font-weight: bold;
+    color: aquamarine;
+}
+
+.paragraph {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-align: right;
+    margin: 30px;
+    color: brown;
+}
+
+#styleId {
+    background-color: darksalmon;
+    font-size: 25px;
+}
+
+.warning {
+    color: red;
+}
+
+.warning span {
+    color: green;
+}
+
+p b {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: blueviolet;
+    font-weight: bold;
+}
+
+a[href="#"] {
+    color: red;
+}
+
+a {
+    color: green;
+}

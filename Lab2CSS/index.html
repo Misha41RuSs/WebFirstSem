@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab2 Стили</title>
+    <link rel="stylesheet" href="priority.css" />
+    <style type="text/css">
+        #div1, #div2 {
+            background-color: maroon;
+        }
+        .blue {
+            background-color: blue;
+        }
+        div {
+            background-color: yellow;
+        }
+        div {
+            background-color: silver;
+        }
+        .green {
+            background-color: green;
+        }
+        #div3, #div4 {
+            background-color: maroon;
+        }
+    </style>
+</head>
+<body>
+    <div id="div4" class="blue" style="background-color: red;">
+        TEST1
+    </div>
+    <div id="div1">
+        TEST2
+    </div>
+    <div id="div2" class="blue">
+        TEST3
+    </div>
+    <div id="div3" class="blue">
+        TEST4
+    </div>
+    <div class="blue">
+        TEST5
+    </div>
+    <div class="green">
+        TEST6
+    </div>
+    <div>
+        TEST7
+    </div>
+    <span>
+        TEST8
+    </span>
+    <br/><hr/><br/><br/>
+    <p>
+        Первая строка
+    </p>
+    <p class="second">
+        Вторая строка
+    </p>
+    <p class="third">
+        Третья строка
+    </p>
+    <br/><hr/><br/><br/>
+    <dl class="terms">
+      <dt>HTML</dt>
+      <dd>Язык разметки документов, используемый для формирования структуры веб-страниц и представления содержимого.</dd>
+
+      <dt>CSS</dt>
+      <dd>Таблицы каскадных стилей — набор правил для задания внешнего вида элементов HTML-документа.</dd>
+
+      <dt>JavaScript</dt>
+      <dd>Язык сценариев, который позволяет реализовать интерактивность и динамическое поведение на веб-страницах.</dd>
+    </dl>
+    <br/><hr/><br/><br/>
+    <h1 class="title">Cascading Style Sheets</h1>
+    <div class="content">
+      cascading style sheets (таблицы каскадных стилей) - это язык, содержащий набор свойств для описания внешнего вида любых html документов.
+    </div>
+    <br/><hr/><br/><br/>
+    <div class="quotes">
+        <p>&laquo;код для открывающейся и закрывающейся кавычек &amp;#171; &amp;#187;&raquo;</p>
+        <p>&#8216;код для открывающейся и закрывающейся кавычек &amp;#8216; &amp;#8217;&#8217;</p>
+        <p>&#8220;код для открывающейся и закрывающейся кавычек &amp;#8220; &amp;#8221;&#8221;</p>
+        <p>&quot;код для открывающейся и закрывающейся кавычек &amp;#34; &amp;#34;&quot;</p>
+    </div>
+    <br/><hr/><br/><br/>
+    <p class="formatted">
+      пример форматированного текста с заданными параметрами, включая расстояние между буквами и словами, выравнивание по ширине и красную строку.
+    </p>
+</body>
+</html>

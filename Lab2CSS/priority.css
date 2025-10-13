@@ -1,0 +1,94 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+div, span {
+    background-color: lime;
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+.second {
+    line-height: 14px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.third {
+    font-family: "Times New Roman", Georgia, serif;
+    font-variant: small-caps;
+    font-size: 32px;
+    line-height: 1.2; 
+    margin-top: 0.5rem;
+}
+
+dl.terms dt {
+      font-family: "Times New Roman", Georgia, serif;
+      font-size: 14pt;
+      font-weight: 700;
+      font-style: italic;
+      text-decoration: underline;
+      margin-top: 0.6rem;
+    }
+
+    
+dl.terms dd {
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+    text-align: justify;
+    word-spacing: 2px;
+    margin-left: 1.2rem;
+}
+
+h1.title {
+      color: red;
+      margin-bottom: 0.4rem;
+    }
+
+.content {
+    text-align: left;
+    word-spacing: 10px;
+    text-indent: 50px;
+    text-transform: capitalize; 
+    font-family: Georgia, "Times New Roman", serif;
+    margin-bottom: 1rem;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.quotes {
+      font-family: "Times New Roman", serif;
+      font-size: 16px;
+      margin-top: 1rem;
+}
+
+.quotes p {
+    margin: 0.3rem 0;
+}
+
+.formatted {
+    text-indent: 15px;       
+    letter-spacing: 5px;     
+    word-spacing: 7px;       
+    text-align: justify;     
+    font-size: 20px;         
+    font-style: italic;     
+    font-weight: 600;        
+    line-height: 30px;    /*поменял чтобы не слипались*/   
+    font-family: Arial, sans-serif;
+    margin-top: 1rem;
+}
+
+body {
+    margin: 30px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: Georgia, "Times New Roman", serif;
+}

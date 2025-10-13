@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <title>Лабораторная №1 Стили</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        p {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        b {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            margin-top: 30px;
+            color: red;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1 style="text-align: center; 
+               font-family: 'Times New Roman', Times, serif; 
+               font-weight: bold;">
+        Лабораторная работа №1 Стили
+    </h1>
+    <p>
+        Первый абзац. Какой-то текст
+    </p>
+    <b>
+        Текст внутри тэга b должен быть красный
+    </b>
+    <h2>
+        Заголовок второго уровня
+    </h2>
+    <p class="paragraph">
+        Абзац с классом: paragraph
+    </p>
+    <div id="styleId">
+        <p>
+            Текст в Id: StyleId
+        </p>
+        <p>
+            Еще один абзаци в StyleId
+        </p>
+    </div>
+    <p class="warning">
+        <span>Зеленый span</span>
+        в красном абзаце
+    </p>
+    <p>
+        <b>
+            Работа контекстного селектора для b внутри p
+        </b>
+    </p>
+    <a href="#">
+        Это пустая ссылка. Она должна быть красной<br />
+    </a>
+    <a href="/Lab3/table.html">
+        А это ссылка на таблицу из 3-й лабы
+    </a>
+</body>
+</html>

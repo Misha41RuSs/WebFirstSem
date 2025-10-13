@@ -1,0 +1,74 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px;
+}
+
+
+.task1 {
+    border: thin solid blue;
+
+    border-top: thin dashed red;              
+    border-bottom: thick ridge blue;          
+    border-right: thin dotted green;         
+    border-left: medium groove violet;        
+
+    margin: 10px;
+}
+
+.task2 {
+    text-align: center;
+    background-color: yellow;
+    border: 1px solid red; 
+
+    padding: 15%;
+
+    margin-left: 15%;
+    margin-right: 20%;
+    margin-bottom: 10%;
+    margin-top: 35%;
+}
+
+.task3 {
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+.rectangle {
+    width: 100%;
+    height: 50%;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.task4 {
+    background-color: white;
+    padding: 20px;
+}
+
+.task4 h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.task4 h3 {
+    background-color: yellow;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.task4 h4 {
+    background-color: yellow;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.task4 p {
+    margin: 10px 0;
+}

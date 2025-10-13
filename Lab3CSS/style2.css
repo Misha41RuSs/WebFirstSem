@@ -1,0 +1,15 @@
+h1 {
+    font-size: 40px;
+    color: red;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+div {
+    background-color: yellow;
+}
+
+span {
+    background-color: red;
+}
