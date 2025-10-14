@@ -344,7 +344,7 @@ h1, h2 {
 
 .element-box {
     background: rgba(255, 255, 255, 0.1);
-    padding: 25px;
+    padding: 25px 60px;
     margin: 20px 0;
     border-radius: 8px;
     border-left: 5px solid #3498db;
@@ -356,7 +356,7 @@ h1, h2 {
     color: #e74c3c;
     font-size: 40px;
     position: absolute;
-    left: 10px;
+    left: 15px;
     top: 10px;
     opacity: 0.7;
 }
@@ -366,10 +366,11 @@ h1, h2 {
     color: #e74c3c;
     font-size: 40px;
     position: absolute;
-    right: 10px;
+    right: 15px;
     bottom: 10px;
     opacity: 0.7;
 }
+
 
 .highlight::selection {
     background: #f39c12;
