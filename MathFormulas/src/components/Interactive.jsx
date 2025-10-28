@@ -264,41 +264,100 @@ function GraphVisualizer() {
 
 // Компонент статистики
 function Statistics() {
-    const [stats, setStats] = useState(() => {
-        const saved = localStorage.getItem('quizStats');
-        return saved ? JSON.parse(saved) : {
-            totalTests: 0,
-            totalQuestions: 0,
-            correctAnswers: 0,
-            bestScores: {},
-            testHistory: []
-        };
+    const [stats, setStats] = useState({
+        totalTests: 0,
+        totalQuestions: 0,
+        correctAnswers: 0,
+        accuracy: 0
     });
+    const [testHistory, setTestHistory] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    // Обновляем статистику каждую секунду для синхронизации
+    // Загружаем статистику с сервера
     useEffect(() => {
-        const interval = setInterval(() => {
-            const saved = localStorage.getItem('quizStats');
-            if (saved) {
-                const newStats = JSON.parse(saved);
-                setStats(newStats);
-            }
-        }, 1000);
-
-        return () => clearInterval(interval);
+        loadStatistics();
+        loadTestHistory();
     }, []);
 
-    const accuracy = stats.totalQuestions > 0 
-        ? Math.round((stats.correctAnswers / stats.totalQuestions) * 100) 
-        : 0;
+    const loadStatistics = async () => {
+        try {
+            setLoading(true);
+            setError(null);
+            
+            // Проверяем что сервис доступен
+            if (!window.StatisticsService) {
+                throw new Error('Сервис статистики не загружен');
+            }
+            
+            const data = await window.StatisticsService.getUserStatistics();
+            setStats(data);
+        } catch (err) {
+            console.error('Failed to load statistics:', err);
+            
+            let errorMessage = 'Не удалось загрузить статистику';
+            if (err.message.includes('Failed to fetch')) {
+                errorMessage = 'Бэкенд не доступен. Убедитесь, что Spring Boot запущен на порту 8080.';
+            } else if (err.message.includes('401') || err.message.includes('403')) {
+                errorMessage = 'Ошибка авторизации. Попробуйте выйти и войти снова.';
+            } else if (err.message.includes('404')) {
+                errorMessage = 'API endpoint не найден. Проверьте настройки бэкенда.';
+            } else if (err.message.includes('500')) {
+                errorMessage = 'Ошибка сервера. Проверьте логи Spring Boot.';
+            }
+            
+            setError(errorMessage);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const loadTestHistory = async () => {
+        try {
+            if (!window.StatisticsService) return;
+            
+            const history = await window.StatisticsService.getTestHistory();
+            setTestHistory(history || []);
+        } catch (err) {
+            console.error('Failed to load test history:', err);
+            setTestHistory([]);
+        }
+    };
+
+    const accuracy = stats.accuracy || 0;
 
     const achievements = [
         { id: 1, name: 'Первый тест', desc: 'Пройти первый тест', condition: stats.totalTests >= 1, icon: '🎯' },
         { id: 2, name: 'Отличник', desc: '80%+ правильных ответов', condition: accuracy >= 80, icon: '🏆' },
         { id: 3, name: 'Настойчивость', desc: 'Пройти 5 тестов', condition: stats.totalTests >= 5, icon: '💪' },
         { id: 4, name: 'Эксперт', desc: 'Пройти 10 тестов', condition: stats.totalTests >= 10, icon: '🎓' },
-        { id: 5, name: 'Перфекционист', desc: '100% в любом тесте', condition: Object.values(stats.bestScores).some(s => s === 100), icon: '⭐' }
+        { id: 5, name: 'Перфекционист', desc: '100% в любом тесте', condition: testHistory.some(t => t.percentage === 100), icon: '⭐' }
     ];
+
+    if (loading) {
+        return (
+            <div className="stats-container">
+                <h2>📊 Статистика и достижения</h2>
+                <div className="loading-spinner" style={{ textAlign: 'center', padding: '2em' }}>
+                    ⏳ Загрузка статистики...
+                </div>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="stats-container">
+                <h2>📊 Статистика и достижения</h2>
+                <div className="error-message" style={{ textAlign: 'center', padding: '2em', color: '#ef4444' }}>
+                    {error}
+                </div>
+                <button onClick={loadStatistics} className="btn-retry">
+                    Попробовать снова
+                </button>
+            </div>
+        );
+    }
 
     return (
         <div className="stats-container">
@@ -325,7 +384,7 @@ function Statistics() {
                 
                 <div className="stat-card">
                     <div className="stat-icon">📈</div>
-                    <div className="stat-value">{accuracy}%</div>
+                    <div className="stat-value">{accuracy.toFixed(1)}%</div>
                     <div className="stat-label">Точность</div>
                 </div>
             </div>
@@ -348,13 +407,16 @@ function Statistics() {
             </div>
 
             <div className="best-scores">
-                <h3>🎯 Лучшие результаты</h3>
-                {Object.keys(stats.bestScores).length > 0 ? (
+                <h3>📜 История тестов</h3>
+                {testHistory.length > 0 ? (
                     <div className="scores-list">
-                        {Object.entries(stats.bestScores).map(([test, score]) => (
-                            <div key={test} className="score-item">
-                                <span className="score-test">{test}</span>
-                                <span className="score-value">{score}%</span>
+                        {testHistory.slice(0, 10).map((result, index) => (
+                            <div key={result.id || index} className="score-item">
+                                <span className="score-test">{result.testName}</span>
+                                <span className="score-value">{result.percentage}%</span>
+                                <span className="score-date">
+                                    {new Date(result.completedAt).toLocaleDateString('ru-RU')}
+                                </span>
                             </div>
                         ))}
                     </div>
@@ -363,25 +425,9 @@ function Statistics() {
                 )}
             </div>
 
-            {stats.totalTests > 0 && (
-                <button 
-                    className="btn-reset-stats"
-                    onClick={() => {
-                        if (confirm('Вы уверены, что хотите сбросить всю статистику?')) {
-                            localStorage.removeItem('quizStats');
-                            setStats({
-                                totalTests: 0,
-                                totalQuestions: 0,
-                                correctAnswers: 0,
-                                bestScores: {},
-                                testHistory: []
-                            });
-                        }
-                    }}
-                >
-                    Сбросить статистику
-                </button>
-            )}
+            <button onClick={() => { loadStatistics(); loadTestHistory(); }} className="btn-refresh-stats">
+                🔄 Обновить статистику
+            </button>
         </div>
     );
 }

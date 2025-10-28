@@ -27,6 +27,19 @@
     
     <!-- Сервисы -->
     <script src="src/services/auth.js"></script>
+    <script>
+        // Делаем сервис статистики доступным глобально
+        window.StatisticsService = {};
+    </script>
+    <script src="src/services/statistics.js"></script>
+    <script>
+        // Экспортируем функции из модуля
+        window.StatisticsService = {
+            getUserStatistics,
+            getTestHistory,
+            submitTestResult
+        };
+    </script>
     
     <!-- Компоненты приложения -->
     <script type="text/babel" src="src/components/Auth.jsx"></script>

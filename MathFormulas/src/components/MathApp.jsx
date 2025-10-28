@@ -872,41 +872,22 @@ function QuizQuestion({ question, onAnswer, showResult, selectedAnswer }) {
 function QuizSelector() {
     const [selectedQuiz, setSelectedQuiz] = useState(null);
 
-    const handleQuizComplete = (score, totalQuestions) => {
-        // Загружаем существующую статистику
-        const saved = localStorage.getItem('quizStats');
-        const stats = saved ? JSON.parse(saved) : {
-            totalTests: 0,
-            totalQuestions: 0,
-            correctAnswers: 0,
-            bestScores: {},
-            testHistory: []
-        };
-
-        // Обновляем статистику
-        stats.totalTests += 1;
-        stats.totalQuestions += totalQuestions;
-        stats.correctAnswers += score;
-        
-        // Обновляем лучший результат для этого теста
-        const percentage = Math.round((score / totalQuestions) * 100);
+    const handleQuizComplete = async (score, totalQuestions, correctAnswers) => {
         const testName = selectedQuiz.name;
         
-        if (!stats.bestScores[testName] || stats.bestScores[testName] < percentage) {
-            stats.bestScores[testName] = percentage;
+        try {
+            // Отправляем результат на сервер
+            await window.StatisticsService.submitTestResult(
+                testName,
+                score,
+                totalQuestions,
+                correctAnswers
+            );
+            console.log('Test result submitted successfully');
+        } catch (error) {
+            console.error('Failed to submit test result:', error);
+            alert('Не удалось сохранить результаты теста. Проверьте подключение к серверу.');
         }
-
-        // Добавляем в историю
-        stats.testHistory.push({
-            testName: testName,
-            score: score,
-            total: totalQuestions,
-            percentage: percentage,
-            date: new Date().toISOString()
-        });
-
-        // Сохраняем в localStorage
-        localStorage.setItem('quizStats', JSON.stringify(stats));
     };
 
     if (selectedQuiz) {
@@ -1041,7 +1022,7 @@ function Quiz({ questions, onComplete }) {
             const finalScore = answers.filter(a => a.isCorrect).length;
             setQuizComplete(true);
             if (onComplete) {
-                onComplete(finalScore, questions.length);
+                onComplete(score + (answers[currentQuestion]?.isCorrect ? 1 : 0), questions.length, score + (answers[currentQuestion]?.isCorrect ? 1 : 0));
             }
         }
     };
@@ -1177,7 +1158,7 @@ function App() {
     const handleAuthSuccess = (userData) => {
         setUser(userData);
         setIsAuthenticated(true);
-        showNotification(`Добро пожаловать, ${userData.username}!`);
+        // Убрали уведомление при входе
     };
 
     const handleLogout = () => {

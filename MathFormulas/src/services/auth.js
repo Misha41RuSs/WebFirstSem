@@ -17,12 +17,20 @@ class AuthService {
                 })
             });
 
+            const text = await response.text();
+            
             if (!response.ok) {
-                const error = await response.json();
-                throw new Error(error.message || 'Ошибка регистрации');
+                let errorMsg = 'Ошибка регистрации';
+                try {
+                    const error = text ? JSON.parse(text) : {};
+                    errorMsg = error.message || errorMsg;
+                } catch (e) {
+                    errorMsg = text || errorMsg;
+                }
+                throw new Error(errorMsg);
             }
 
-            const data = await response.json();
+            const data = text ? JSON.parse(text) : {};
             
             // Сохраняем токен и данные пользователя
             if (data.token) {
@@ -51,12 +59,20 @@ class AuthService {
                 })
             });
 
+            const text = await response.text();
+            
             if (!response.ok) {
-                const error = await response.json();
-                throw new Error(error.message || 'Неверные учетные данные');
+                let errorMsg = 'Неверные учетные данные';
+                try {
+                    const error = text ? JSON.parse(text) : {};
+                    errorMsg = error.message || errorMsg;
+                } catch (e) {
+                    errorMsg = text || errorMsg;
+                }
+                throw new Error(errorMsg);
             }
 
-            const data = await response.json();
+            const data = text ? JSON.parse(text) : {};
             
             // Сохраняем токен и данные пользователя
             if (data.token) {
@@ -75,6 +91,8 @@ class AuthService {
     static logout() {
         localStorage.removeItem('authToken');
         localStorage.removeItem('currentUser');
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
     }
 
     // Проверка авторизации
@@ -84,23 +102,28 @@ class AuthService {
 
     // Получение текущего пользователя
     static getCurrentUser() {
-        const userStr = localStorage.getItem('currentUser');
+        let userStr = localStorage.getItem('currentUser');
+        if (!userStr) userStr = localStorage.getItem('user');
         return userStr ? JSON.parse(userStr) : null;
     }
 
     // Получение токена
     static getToken() {
-        return localStorage.getItem('authToken');
+        let token = localStorage.getItem('authToken');
+        if (!token) token = localStorage.getItem('token');
+        return token;
     }
 
     // Сохранение токена
     static saveToken(token) {
         localStorage.setItem('authToken', token);
+        localStorage.setItem('token', token); // Для совместимости
     }
 
     // Сохранение данных пользователя
     static saveUser(user) {
         localStorage.setItem('currentUser', JSON.stringify(user));
+        localStorage.setItem('user', JSON.stringify(user)); // Для совместимости
     }
 
     // Проверка токена на сервере

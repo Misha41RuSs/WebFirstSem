@@ -376,32 +376,7 @@
     margin: 30px 0;
 }
 
-/* Уведомления */
-.notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: linear-gradient(135deg, var(--accent), var(--highlight));
-    color: white;
-    padding: 15px 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px var(--shadow);
-    z-index: 1000;
-    animation: slideInRight 0.3s ease;
-    font-weight: 600;
-}
-
-/* Анимации */
-@keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
+/* Уведомления - стили перенесены в main.css */
 
 @keyframes correctPulse {
     0%, 100% {

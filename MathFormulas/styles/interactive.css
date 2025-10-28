@@ -450,6 +450,47 @@
     transform: translateY(-2px);
 }
 
+.btn-refresh-stats {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--accent), var(--highlight));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-refresh-stats:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+.btn-retry {
+    padding: 12px 30px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn-retry:hover {
+    background: var(--highlight);
+    transform: translateY(-2px);
+}
+
+.score-date {
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    margin-left: 10px;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .stats-grid {
