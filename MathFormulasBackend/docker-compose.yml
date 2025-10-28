@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: mathformulas-postgres
+    environment:
+      POSTGRES_DB: mathformulas_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./src/main/resources/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    networks:
+      - mathformulas-network
+
+volumes:
+  postgres_data:
+
+networks:
+  mathformulas-network:
+    driver: bridge
+

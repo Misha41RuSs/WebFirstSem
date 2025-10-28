@@ -13,224 +13,124 @@
         
         <!-- Задание №1 -->
         <div class="section">
-            <div class="task-title">Задание №1: Псевдокласс :focus</div>
+            <div class="task-title">Псевдокласс :focus</div>
             <div class="focus-demo">
-                <input type="text" class="focus-input" placeholder="Введите ваше имя">
-                <input type="email" class="focus-input" placeholder="Введите ваш email">
-                <textarea class="focus-textarea" placeholder="Введите ваше сообщение..."></textarea>
+                <input type="text" class="focus-input" placeholder="Имя">
+                <input type="email" class="focus-input" placeholder="Email">
+                <textarea class="focus-textarea" placeholder="Сообщение..."></textarea>
                 <button class="focus-button">Отправить</button>
-            </div>
-            <div class="explanation">
-                <strong>Псевдокласс :focus</strong> применяется к элементу, когда он получает фокус (например, при клике или переходе по Tab).
-                Часто используется для улучшения доступности и UX форм.
-            </div>
-            <div class="code-example">
-                .focus-input:focus {<br>
-                &nbsp;&nbsp;border-color: #3498db;<br>
-                &nbsp;&nbsp;box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);<br>
-                &nbsp;&nbsp;background-color: #ecf0f1;<br>
-                &nbsp;&nbsp;transform: translateY(-2px);<br>
-                }
             </div>
         </div>
         
         <!-- Задание №2 -->
         <div class="section">
-            <div class="task-title">Задание №2: Псевдоклассы :first-child и :last-child</div>
+            <div class="task-title">:first-child и :last-child</div>
             <div class="child-demo">
                 <div class="list-container">
-                    <h3 class="list-title">Список элементов</h3>
+                    <h3 class="list-title">Список 1</h3>
                     <ul class="styled-list">
-                        <li>Первый элемент</li>
-                        <li>Второй элемент</li>
-                        <li>Третий элемент</li>
-                        <li>Четвертый элемент</li>
-                        <li>Последний элемент</li>
+                        <li>Элемент 1</li>
+                        <li>Элемент 2</li>
+                        <li>Элемент 3</li>
+                        <li>Элемент 4</li>
+                        <li>Элемент 5</li>
                     </ul>
                 </div>
                 
                 <div class="list-container">
-                    <h3 class="list-title">Другой список</h3>
+                    <h3 class="list-title">Список 2</h3>
                     <ul class="styled-list">
-                        <li>Начальный пункт</li>
-                        <li>Средний пункт 1</li>
-                        <li>Средний пункт 2</li>
-                        <li>Средний пункт 3</li>
-                        <li>Финальный пункт</li>
+                        <li>Пункт 1</li>
+                        <li>Пункт 2</li>
+                        <li>Пункт 3</li>
+                        <li>Пункт 4</li>
+                        <li>Пункт 5</li>
                     </ul>
                 </div>
-            </div>
-            <div class="explanation">
-                <strong>:first-child</strong> выбирает первый дочерний элемент родителя.<br>
-                <strong>:last-child</strong> выбирает последний дочерний элемент родителя.
-            </div>
-            <div class="code-example">
-                li:first-child {<br>
-                &nbsp;&nbsp;background: #e74c3c;<br>
-                &nbsp;&nbsp;color: white;<br>
-                &nbsp;&nbsp;font-weight: bold;<br>
-                }<br><br>
-                li:last-child {<br>
-                &nbsp;&nbsp;background: #2ecc71;<br>
-                &nbsp;&nbsp;color: white;<br>
-                &nbsp;&nbsp;font-weight: bold;<br>
-                }
             </div>
         </div>
         
         <!-- Задание №3 -->
         <div class="section">
-            <div class="task-title">Задание №3: Псевдоэлемент ::before</div>
+            <div class="task-title">Псевдоэлемент ::before</div>
             <div class="before-demo">
                 <ul class="before-list">
-                    <li>Важный пункт списка</li>
-                    <li>Еще один важный пункт</li>
-                    <li>Третий важный пункт</li>
+                    <li>Пункт со звездочкой</li>
+                    <li>Еще один пункт</li>
+                    <li>Третий пункт</li>
                 </ul>
                 
                 <ul class="before-list icon-list" style="margin-top: 30px;">
-                    <li>Выполненная задача</li>
-                    <li>Другая выполненная задача</li>
-                    <li>Последняя выполненная задача</li>
+                    <li>Задача 1</li>
+                    <li>Задача 2</li>
+                    <li>Задача 3</li>
                 </ul>
                 
                 <ul class="before-list number-list" style="margin-top: 30px;">
-                    <li>Нумерованный пункт</li>
-                    <li>Второй нумерованный пункт</li>
-                    <li>Третий нумерованный пункт</li>
+                    <li>Нумерованный</li>
+                    <li>Второй нумерованный</li>
+                    <li>Третий нумерованный</li>
                 </ul>
-            </div>
-            <div class="explanation">
-                <strong>::before</strong> создает псевдоэлемент, который является первым потомком выбранного элемента.
-                Часто используется для добавления декоративного контента перед содержимым элемента.
-            </div>
-            <div class="code-example">
-                li::before {<br>
-                &nbsp;&nbsp;content: "★";<br>
-                &nbsp;&nbsp;color: #e74c3c;<br>
-                &nbsp;&nbsp;margin-right: 15px;<br>
-                &nbsp;&nbsp;font-weight: bold;<br>
-                }
             </div>
         </div>
         
         <!-- Задание №4 -->
         <div class="section">
-            <div class="task-title">Задание №4: Псевдоклассы ссылок</div>
+            <div class="task-title">Псевдоклассы ссылок</div>
             <div class="links-demo">
                 <div class="links-container">
                     <div class="link-box">
-                        <h3>Состояния ссылки</h3>
-                        <a href="#visited" class="styled-link link-1">:link / :visited</a><br>
-                        <a href="#" class="styled-link link-1">:hover</a><br>
-                        <a href="#" class="styled-link link-1">:active</a>
+                        <h3>Стиль 1</h3>
+                        <a href="#visited" class="styled-link link-1">Ссылка 1</a><br>
+                        <a href="#" class="styled-link link-1">Ссылка 2</a><br>
+                        <a href="#" class="styled-link link-1">Ссылка 3</a>
                     </div>
                     
                     <div class="link-box">
-                        <h3>Альтернативный стиль</h3>
-                        <a href="#visited2" class="styled-link link-2">Посещенная</a><br>
-                        <a href="#" class="styled-link link-2">При наведении</a><br>
-                        <a href="#" class="styled-link link-2">Активная</a>
+                        <h3>Стиль 2</h3>
+                        <a href="#visited2" class="styled-link link-2">Ссылка 1</a><br>
+                        <a href="#" class="styled-link link-2">Ссылка 2</a><br>
+                        <a href="#" class="styled-link link-2">Ссылка 3</a>
                     </div>
                 </div>
-            </div>
-            <div class="explanation">
-                <strong>Псевдоклассы ссылок:</strong><br>
-                • <strong>:link</strong> - непосещенная ссылка<br>
-                • <strong>:visited</strong> - посещенная ссылка<br>
-                • <strong>:hover</strong> - при наведении курсора<br>
-                • <strong>:active</strong> - в момент активации (клика)
-            </div>
-            <div class="code-example">
-                a:link { color: #3498db; }<br>
-                a:visited { color: #8e44ad; }<br>
-                a:hover { <br>
-                &nbsp;&nbsp;background: #3498db;<br>
-                &nbsp;&nbsp;color: white;<br>
-                &nbsp;&nbsp;transform: translateY(-3px);<br>
-                }<br>
-                a:active { background: #2980b9; }
             </div>
         </div>
         
         <!-- Задание №5 -->
         <div class="section">
-            <div class="task-title">Задание №5: Псевдоэлементы ::first-letter и ::first-line</div>
+            <div class="task-title">::first-letter и ::first-line</div>
             <div class="text-formatting">
                 <div class="formatted-text">
-                    <p>Это первый абзац текста, который демонстрирует использование псевдоэлементов. Первая буква должна быть зеленого цвета и размером 24pt, а первая строка - синего цвета. Весь остальной текст абзаца отображается красным цветом с размером 12pt, как того требует задание.</p>
+                    <p>Первый абзац текста с первой буквой зеленого цвета и первой строкой синего цвета. Остальной текст красного цвета размером 12pt.</p>
                     
-                    <p>Второй абзац также следует тем же правилам форматирования. Здесь мы видим, как псевдоэлементы могут быть использованы для создания визуально привлекательных текстовых блоков без изменения разметки HTML. Это мощный инструмент для веб-дизайнеров.</p>
+                    <p>Второй абзац следует тем же правилам. Первая буква большая и зеленая, первая строка синяя, остальное красное.</p>
                     
-                    <p>Третий пример абзаца показывает согласованное применение стилей ко всем параграфам. Такой подход обеспечивает единообразие оформления и экономит время разработки, поскольку не требует ручного форматирования каждого элемента в отдельности.</p>
+                    <p>Третий абзац для примера. Тут показано согласованное применение стилей ко всем параграфам на странице.</p>
                 </div>
-            </div>
-            <div class="explanation">
-                <strong>::first-letter</strong> выбирает первую букву текста элемента.<br>
-                <strong>::first-line</strong> выбирает первую строку текста элемента.
-            </div>
-            <div class="code-example">
-                p {<br>
-                &nbsp;&nbsp;color: red;<br>
-                &nbsp;&nbsp;font-size: 12pt;<br>
-                }<br><br>
-                p::first-letter {<br>
-                &nbsp;&nbsp;color: #2ecc71;<br>
-                &nbsp;&nbsp;font-size: 24pt;<br>
-                &nbsp;&nbsp;font-weight: bold;<br>
-                }<br><br>
-                p::first-line {<br>
-                &nbsp;&nbsp;color: #3498db;<br>
-                &nbsp;&nbsp;font-weight: bold;<br>
-                }
             </div>
         </div>
         
         <!-- Задание №6 -->
         <div class="section">
-            <div class="task-title">Задание №6: Различные псевдоэлементы</div>
+            <div class="task-title">Другие псевдоэлементы</div>
             <div class="pseudo-elements-demo">
                 <div class="element-box">
-                    <h3>Элемент с ::before и ::after</h3>
-                    <p>Этот блок демонстрирует использование псевдоэлементов ::before и ::after для добавления декоративного контента в начало и конец элемента.</p>
+                    <h3>::before и ::after</h3>
+                    <p>Блок с кавычками в начале и конце.</p>
                 </div>
                 
                 <div class="element-box highlight">
-                    <h3>Выделение текста ::selection</h3>
-                    <p>Попробуйте выделить этот текст мышью. Псевдоэлемент ::selection позволяет стилизовать выделенный пользователем текст.</p>
+                    <h3>::selection</h3>
+                    <p>Выделите этот текст мышью.</p>
                 </div>
                 
                 <div class="element-box">
-                    <h3>Плейсхолдер input::placeholder</h3>
-                    <input type="text" class="focus-input placeholder-demo" placeholder="Этот плейсхолдер стилизован" style="width: 100%;">
+                    <h3>::placeholder</h3>
+                    <input type="text" class="focus-input placeholder-demo" placeholder="Стилизованный плейсхолдер" style="width: 100%;">
                 </div>
             </div>
-            <div class="explanation">
-                <strong>Другие полезные псевдоэлементы:</strong><br>
-                • <strong>::after</strong> - создает элемент после содержимого<br>
-                • <strong>::selection</strong> - стилизует выделенный текст<br>
-                • <strong>::placeholder</strong> - стилизует текст-подсказку в полях ввода
-            </div>
-            <div class="code-example">
-                .element-box::before {<br>
-                &nbsp;&nbsp;content: "«";<br>
-                &nbsp;&nbsp;color: #e74c3c;<br>
-                &nbsp;&nbsp;font-size: 40px;<br>
-                }<br><br>
-                .highlight::selection {<br>
-                &nbsp;&nbsp;background: #f39c12;<br>
-                &nbsp;&nbsp;color: white;<br>
-                }<br><br>
-                input::placeholder {<br>
-                &nbsp;&nbsp;color: #e74c3c;<br>
-                &nbsp;&nbsp;font-style: italic;<br>
-                }
-            </div>
-        </div>
-        
-        <div class="interactive-note">
-            💡 Попробуйте взаимодействовать с элементами: кликайте на поля ввода, наводите курсор на ссылки и списки, выделяйте текст!
         </div>
     </div>
 </body>
+</html>
 </html>

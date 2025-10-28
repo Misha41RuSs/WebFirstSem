@@ -13,29 +13,19 @@
         
         <!-- Задание №1 -->
         <div class="section">
-            <div class="task-title">Задание №1: Свойства display, шрифта, текста, рамки и поля</div>
+            <div class="task-title">Свойства display</div>
             <div class="display-demo">
-                <div class="block-item">Блочный элемент (display: block)</div>
-                <div class="inline-item">Строчный элемент 1</div>
-                <div class="inline-item">Строчный элемент 2</div>
+                <div class="block-item">Блочный элемент</div>
+                <div class="inline-item">Строчный 1</div>
+                <div class="inline-item">Строчный 2</div>
                 <div class="inline-block-item">Inline-Block</div>
                 <div class="inline-block-item">Элемент</div>
-                <div class="none-item">Этот элемент скрыт (display: none)</div>
-            </div>
-            <div class="explanation">
-                <strong>Наблюдение:</strong> 
-                <ul>
-                    <li><strong>block</strong> - элемент занимает всю доступную ширину, начинается с новой строки</li>
-                    <li><strong>inline</strong> - элементы располагаются в строке, width/height не работают</li>
-                    <li><strong>inline-block</strong> - как inline, но с поддержкой width/height</li>
-                    <li><strong>none</strong> - элемент полностью скрыт и не занимает места</li>
-                </ul>
             </div>
         </div>
         
         <!-- Задание №2 -->
         <div class="section">
-            <div class="task-title">Задание №2: Химические формулы с display</div>
+            <div class="task-title">Химические формулы</div>
             <div class="chemical-formulas">
                 <div class="formula">
                     <h3>Серная кислота</h3>
@@ -54,97 +44,77 @@
                     <div class="formula-text">CH<sub>4</sub></div>
                 </div>
             </div>
-            <div class="code-example">
-                &lt;div class="formula-text"&gt;H&lt;sub&gt;2&lt;/sub&gt;SO&lt;sub&gt;4&lt;/sub&gt;&lt;/div&gt;
-            </div>
         </div>
         
         <!-- Задание №3 -->
         <div class="section">
-            <div class="task-title">Задание №3: Свойство float</div>
+            <div class="task-title">Свойство float</div>
             <div class="float-container">
-                <div class="float-box float-left">Float Left 1</div>
-                <div class="float-box float-left">Float Left 2</div>
-                <div class="float-box float-right">Float Right 1</div>
-                <div class="float-box float-right">Float Right 2</div>
+                <div class="float-box float-left">Слева 1</div>
+                <div class="float-box float-left">Слева 2</div>
+                <div class="float-box float-right">Справа 1</div>
+                <div class="float-box float-right">Справа 2</div>
                 
                 <div class="float-content">
-                    <p>Этот текст обтекает плавающие элементы. Свойство float позволяет элементам "плавать" слева или справа, а остальной контент обтекает их.</p>
-                    <p>Элементы с float: left перемещаются влево, а с float: right - вправо.</p>
+                    <p>Текст обтекает элементы слева и справа.</p>
                 </div>
                 
                 <div class="clear-float"></div>
                 
-                <div class="float-box float-left" style="background: #f39c12;">Еще один float</div>
+                <div class="float-box float-left" style="background: #f39c12;">Еще один</div>
                 <div class="float-content">
-                    <p>После применения clear: both, новые float-элементы начинаются с новой линии.</p>
+                    <p>Новый элемент после очистки.</p>
                 </div>
             </div>
         </div>
         
         <!-- Задание №4 -->
         <div class="section">
-            <div class="task-title">Задание №4: Свойство clear</div>
+            <div class="task-title">Свойство clear</div>
             <div class="clear-demo">
-                <div class="float-box float-left">Float Left</div>
-                <div class="float-box float-right">Float Right</div>
+                <div class="float-box float-left">Слева</div>
+                <div class="float-box float-right">Справа</div>
                 
-                <div class="clear-box clear-left">clear: left</div>
-                <div class="clear-box clear-right">clear: right</div>
-                <div class="clear-box clear-both">clear: both</div>
-                <div class="clear-box clear-none">clear: none</div>
-            </div>
-            <div class="explanation">
-                <strong>Наблюдение:</strong>
-                <ul>
-                    <li><strong>clear: left</strong> - отменяет обтекание слева</li>
-                    <li><strong>clear: right</strong> - отменяет обтекание справа</li>
-                    <li><strong>clear: both</strong> - отменяет обтекание с обеих сторон</li>
-                    <li><strong>clear: none</strong> - разрешает обтекание со всех сторон</li>
-                </ul>
+                <div class="clear-box clear-left">clear left</div>
+                <div class="clear-box clear-right">clear right</div>
+                <div class="clear-box clear-both">clear both</div>
+                <div class="clear-box clear-none">clear none</div>
             </div>
         </div>
         
         <!-- Задание №5 -->
         <div class="section">
-            <div class="task-title">Задание №5: Свойство clip - обрезка изображения</div>
+            <div class="task-title">Обрезка изображения</div>
             <div class="image-comparison">
                 <div class="image-box">
-                    <h3>Исходное изображение</h3>
-                    <img src="../Lab1-2/images/css.webp" alt="Исходное изображение" width="300" height="250">
+                    <h3>Исходное</h3>
+                    <img src="../Lab1-2/images/css.webp" alt="Исходное" width="300" height="250">
                 </div>
                 <div class="image-box">
-                    <h3>Обрезанная область</h3>
+                    <h3>Обрезанное</h3>
                     <div style="position: relative; width: 300px; height: 250px;">
                         <img src="../Lab1-2/images/js.webp" 
-                             alt="Обрезанное изображение" 
+                             alt="Обрезанное" 
                              style="clip: rect(50px, 250px, 200px, 50px); position: absolute;">
                     </div>
                 </div>
-            </div>
-            <div class="code-example">
-                clip: rect(50px, 250px, 200px, 50px); /* top, right, bottom, left */
             </div>
         </div>
         
         <!-- Задание №6 -->
         <div class="section">
-            <div class="task-title">Задание №6: Свойство zoom (реализовано через transform: scale)</div>
+            <div class="task-title">Масштабирование</div>
             <div class="zoom-container">
-                <div class="zoom-box zoom-50">Zoom 50%</div>
-                <div class="zoom-box zoom-100">Zoom 100%</div>
-                <div class="zoom-box zoom-150">Zoom 150%</div>
-                <div class="zoom-box zoom-200">Zoom 200%</div>
-            </div>
-            <div class="explanation">
-                <strong>Примечание:</strong> Свойство zoom устарело и не рекомендуется к использованию. 
-                Вместо него лучше использовать transform: scale() для масштабирования элементов.
+                <div class="zoom-box zoom-50">50%</div>
+                <div class="zoom-box zoom-100">100%</div>
+                <div class="zoom-box zoom-150">150%</div>
+                <div class="zoom-box zoom-200">200%</div>
             </div>
         </div>
         
         <!-- Задание №7 -->
         <div class="section">
-            <div class="task-title">Задание №7: Свойство cursor - различные виды курсора</div>
+            <div class="task-title">Виды курсора</div>
             <div class="cursor-demo">
                 <div class="cursor-item default">default</div>
                 <div class="cursor-item pointer">pointer</div>
@@ -155,32 +125,26 @@
                 <div class="cursor-item help">help</div>
                 <div class="cursor-item not-allowed">not-allowed</div>
             </div>
-            <div class="code-example">
-                .pointer { cursor: pointer; }<br>
-                .wait { cursor: wait; }<br>
-                .text { cursor: text; }<br>
-                /* и т.д. */
-            </div>
         </div>
         
         <!-- Задание №8 -->
         <div class="section">
-            <div class="task-title">Задание №8: Свойство overflow</div>
+            <div class="task-title">Свойство overflow</div>
             <div class="overflow-demo">
                 <div class="overflow-box auto">
-                    <h3>overflow: auto</h3>
+                    <h3>auto</h3>
                     <div class="overflow-content"></div>
                 </div>
                 <div class="overflow-box scroll">
-                    <h3>overflow: scroll</h3>
+                    <h3>scroll</h3>
                     <div class="overflow-content"></div>
                 </div>
                 <div class="overflow-box hidden">
-                    <h3>overflow: hidden</h3>
+                    <h3>hidden</h3>
                     <div class="overflow-content"></div>
                 </div>
                 <div class="overflow-box visible">
-                    <h3>overflow: visible</h3>
+                    <h3>visible</h3>
                     <div class="overflow-content"></div>
                 </div>
             </div>
@@ -188,60 +152,38 @@
         
         <!-- Задание №9 -->
         <div class="section">
-            <div class="task-title">Задание №9: Полосы прокрутки с кастомным дизайном</div>
+            <div class="task-title">Полоса прокрутки</div>
             <div class="scrollbar-demo">
                 <div class="scrollbar-content">
-                    <h3>Кастомная полоса прокрутки</h3>
-                    <p>Эта область имеет стилизованную полосу прокрутки с градиентным заполнением.</p>
-                    <p>Прокрутите вниз, чтобы увидеть эффект...</p>
+                    <h3>Стилизованная прокрутка</h3>
+                    <p>Прокрутите вниз...</p>
                     <div style="height: 300px;"></div>
-                    <p>Достигнута нижняя часть контента!</p>
+                    <p>Конец содержимого</p>
                 </div>
-            </div>
-            <div class="code-example">
-                /* Стилизация для WebKit браузеров */<br>
-                ::-webkit-scrollbar { width: 15px; }<br>
-                ::-webkit-scrollbar-track { background: #f1f1f1; }<br>
-                ::-webkit-scrollbar-thumb { background: linear-gradient(45deg, #3498db, #2ecc71); }
             </div>
         </div>
         
         <!-- Задание №10 -->
         <div class="section">
-            <div class="task-title">Задание №10: Свойство visibility</div>
+            <div class="task-title">Свойство visibility</div>
             <div class="visibility-demo">
                 <div class="visibility-box visible-item">visible</div>
                 <div class="visibility-box hidden-item">hidden</div>
-                <div class="visibility-box visible-item">Рядом с hidden</div>
+                <div class="visibility-box visible-item">Рядом</div>
                 <div class="visibility-box collapse-item">collapse</div>
-            </div>
-            <div class="explanation">
-                <strong>Наблюдение:</strong>
-                <ul>
-                    <li><strong>visible</strong> - элемент видим</li>
-                    <li><strong>hidden</strong> - элемент невидим, но занимает место</li>
-                    <li><strong>collapse</strong> - для табличных элементов скрывает строку/столбец</li>
-                </ul>
             </div>
         </div>
         
         <!-- Задание №11 -->
         <div class="section">
-            <div class="task-title">Задание №11: Свойства opacity и rgba</div>
+            <div class="task-title">Прозрачность</div>
             <div class="opacity-demo">
-                <div class="opacity-item opacity-1">opacity: 1</div>
-                <div class="opacity-item opacity-08">opacity: 0.8</div>
-                <div class="opacity-item opacity-06">opacity: 0.6</div>
-                <div class="opacity-item opacity-04">opacity: 0.4</div>
-                <div class="opacity-item opacity-02">opacity: 0.2</div>
-                <div class="opacity-item rgba-item">rgba(52,152,219,0.5)</div>
-            </div>
-            <div class="explanation">
-                <strong>Сравнение opacity и rgba:</strong>
-                <ul>
-                    <li><strong>opacity</strong> - влияет на прозрачность всего элемента и его содержимого</li>
-                    <li><strong>rgba</strong> - задает прозрачность только для фона, текст остается непрозрачным</li>
-                </ul>
+                <div class="opacity-item opacity-1">100%</div>
+                <div class="opacity-item opacity-08">80%</div>
+                <div class="opacity-item opacity-06">60%</div>
+                <div class="opacity-item opacity-04">40%</div>
+                <div class="opacity-item opacity-02">20%</div>
+                <div class="opacity-item rgba-item">rgba</div>
             </div>
         </div>
     </div>
